@@ -1,0 +1,113 @@
+:api = http://localhost:3000/api
+:host = http://localhost:3000
+
+# Create user
+POST :api/user/
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+{
+        "username": "jacky",
+        "password": "banana"
+}
+
+# Get a user
+GET :api/user/1
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+# Update user
+PUT :api/user/1
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+{
+        "username": "jacky",
+        "password": "orange"
+}
+
+# Get a token
+POST :api/authentication
+Content-Type: application/json
+
+{
+        "username": "jacky",
+        "password": "banana"
+}
+
+# Create a blog
+POST :api/blog/
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+{
+        "url": "my-url3",
+        "title": "my title",
+        "preview": "my preview",
+        "content": "my content",
+        "tags": ["bar", "foo"]
+}
+
+# Get a blog
+GET :api/blog/1
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+# Update a blog
+PATCH :api/blog/1
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+{
+        "content": "<h1>new content</h1>",
+        "tags": ["bar", "foo", "pp"]
+}
+
+# Delete a blog
+DELETE :api/blog/1
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+# Get all simple blogs
+GET :api/blogs/
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+# Force create a blog
+POST :api/force-blog/
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+{
+        "title": "force title",
+        "url": "force url",
+        "preview": "force preview",
+        "content": "force content",
+        "tags": ["bar", "foo"],
+        "create_time": "2022-05-23",
+        "edit_time": "2022-12-12"
+}
+
+# Force update a blog
+PUT :api/force-blog/1
+Content-Type: application/json
+Authorization: Bearer verygoodtoken
+
+{
+        "title": "force update title",
+        "url": "force url",
+        "preview": "force preview",
+        "content": "force content",
+        "tags": ["bar", "foo"],
+        "create_time": "2022-05-23",
+        "edit_time": "2022-12-12"
+}
+
+# Get homepage
+GET :host/
+
+# Get a blog
+GET :host/posts/my-url.html
+
+# Get a tag
+GET :host/tags/bar

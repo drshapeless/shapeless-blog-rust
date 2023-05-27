@@ -1,0 +1,7 @@
+#+title: readme
+
+This is a rewrite of my personal blog server. I originally planned to
+port it from the previous Go version to Rust version. However, I found
+that the approach of using Go and Rust is very different.
+
+shapeless-blog mainly depends on Axum and sqlx.

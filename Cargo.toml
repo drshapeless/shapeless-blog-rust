@@ -1,0 +1,22 @@
+[package]
+name = "shapeless-blog"
+version = "5.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = { version = "0.6.18", features = ["macros"] }
+bcrypt = "0.14.0"
+chrono = { version = "0.4.24", features = ["serde"] }
+clap = { version = "4.2.7", features = ["derive", "cargo"] }
+hex = "0.4.3"
+log = "0.4.17"
+rand = "0.8.5"
+serde = { version = "1.0.163", features = ["derive"] }
+sqlx = { version = "0.6.3", features = ["macros", "postgres", "runtime-tokio-rustls", "chrono"] }
+tinytemplate = "1.2.1"
+tokio = { version = "1.28.1", features = ["full"] }
+tracing = "0.1.37"
+tracing-appender = "0.2.2"
+tracing-subscriber = { version = "0.3.17", features = ["registry"] }
