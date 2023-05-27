@@ -1,0 +1,8 @@
+#!/sbin/openrc-run
+# By Jacky Li, drsl@drshapeless.com
+
+supervisor=supervise-daemon
+LOG_DIRECTORY="/home/jacky/shapeless-blog/log/"
+
+command=/usr/local/bin/shapeless-blog
+command_args="--log-directory=${LOG_DIRECTORY}"

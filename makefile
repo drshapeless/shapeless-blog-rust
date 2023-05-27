@@ -1,8 +1,17 @@
+binary_name = shapeless-blog
+remote_host = jacky@drshapeless.com
+
+.PHONY: build run
 build:
 	cargo build --release
 
 run:
 	./target/release/shapeless-blog
+
+deploy: build
+	scp ./target/release/$(binary_name) $(remote_host)':shapeless-blog/'
+	scp ./init/shapeless-blog.init $(remote_host)':shapeless-blog/'
+	ssh $(remote_host) 'zsh' < ./scripts/deploy.sh
 
 build_and_run: build run
 
